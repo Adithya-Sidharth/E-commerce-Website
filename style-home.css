@@ -1,0 +1,264 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* DEFAULT STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; 
+}
+
+body {
+  font-family: 'Montserrat',Arial, sans-serif; 
+  line-height: 1.6; /* Improves readability */
+  font-weight: 400;
+  background-color: rgba(28, 28, 28, 1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; 
+}
+
+ul, ol {
+  list-style: none; 
+}
+
+a {
+  text-decoration: none; 
+  color: inherit; /* Inherits color from parent element */
+}
+
+p{
+  line-height: 1.5rem;
+}
+
+img{
+  max-width: 100%;
+}
+
+/* HEADER STYLE */
+
+header {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: rgba(51, 51, 51, 0.5); 
+  padding: 10px 15px;
+  z-index: 1000;
+}
+.logo{
+  margin-left: 5rem;
+  font-family: 'Montserrat';
+  font-size: 40px;
+  color: rgba(255, 215, 0, 1);
+}
+
+nav,
+.nav__menu,
+.nav__list{
+  display: flex;
+  align-items: center;
+}
+
+.nav__menu{
+  margin-left: 2.5rem;
+}
+
+nav{
+  justify-content: space-between;
+}
+
+.nav__list{
+  margin-right: 5rem;
+  color: rgba(245, 245, 245, 1);
+}
+
+/*=========== HOMEPAGE ===========*/
+
+.crop-container {
+  width: 100%;
+  height: 700px; 
+  overflow: hidden; 
+  position: relative;
+}
+
+.crop-container img{
+  position: absolute; 
+  top: -190px; 
+  left: 50%; 
+  width: auto; 
+  height: auto; 
+  transform: translateX(-50%); 
+}
+
+.overlay{
+  position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  font-weight: 600;
+}
+
+.welcome{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.cta-button {
+  padding: 15px 50px;
+  border: solid 2px white;
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: 'Merriweather';
+  font-weight: 500;
+}
+
+
+.cta-button:hover {
+  background-color: white; 
+  color: black;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px; 
+}
+
+
+.overlay-wrapper {
+  position: relative;
+}
+
+.thumbnail-container img {
+  height: 337px;
+  width: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+  pointer-events: none; 
+}
+
+.hero-content2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2; /* Ensure text is above the overlay */
+}
+
+.hero-font {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.image-link {
+  display: block; 
+  height: 100%; 
+  width: 100%; 
+}
+
+.crop-container2 {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden; /* Keeps image within bounds */
+  margin-top: 0px;
+}
+
+.crop-container2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Overlay stays on top */
+}
+
+.crop-container2 img {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 100%; /* Fill container */
+  height: 100%; /* Fill container */
+  object-fit: cover; /* Keeps image centered */
+  transform: translate(-50%, -50%); /* Ensures centering */
+  transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+.crop-container2:hover img {
+  transform: translate(-50%, -50%) scale(1.05); /* Slight scale within bounds */
+}
+
+
+/* Updated Hover Effect on Images */
+.overlay-wrapper, .crop-container2 {
+  overflow: hidden; /* Keeps image within boundaries */
+  position: relative; /* Allows control over child positioning */
+}
+
+.overlay-wrapper img,
+.crop-container2 img {
+  transition: transform 0.3s ease; /* Smooth transition */
+  width: 100%; /* Ensure it fills the container */
+  height: 100%; /* Fills container without overflow */
+  object-fit: cover; /* Keeps image centered within boundary */
+}
+
+.overlay-wrapper:hover img,
+.crop-container2:hover img {
+  transform: scale(1.05); /* Smaller scale to stay within bounds */
+}
+
+.camping-gears {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Fill the container width */
+  height: 100%; /* Fill the container height */
+  object-fit: cover; /* Keeps the image centered without stretching */
+  transform: translate(-50%, -50%); /* Center the image */
+  transition: transform 0.4s ease; /* Smooth scaling effect */
+}
+
+.crop-container2:hover .camping-gears {
+  transform: translate(-50%, -50%) scale(1.1); /* Enlarge on hover */
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-cart.css">
+    <title>Checkout - Hello Traveller</title>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <nav class="nav container">
+          <a href="Home-Page.html" class="logo">Hello Traveller</a>
+  
+          <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+              <li><a href="shop.html" class="nav__link">Shop</a></li>
+            </ul>
+            <ul class="nav__list">
+              <li><a href="cart.html" class="nav__link">Cart</a></li>
+              <span id="cart-count" class="cart-count"> 0</span>
+            </ul>
+          </div>
+        </nav>
+    </header>
+
+    <!-- Main Checkout Container -->
+    <div class="checkout-container">
+        <!-- Left Half: My Cart -->
+        <div class="cart-section">
+            <h2>My Cart</h2>
+            <div id="cart-items">
+                <!-- Individual cart items will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- Right Half: Order Summary -->
+        <div class="summary-section">
+            <h2>Order Summary</h2>
+            <div id="order-summary">
+                <!-- Order summary items will be added here dynamically -->
+            </div>
+            <div class="total">
+                <p>Total: <span id="total-price">0.00</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="E-commerce.js"></script>
+</body>
+</html>

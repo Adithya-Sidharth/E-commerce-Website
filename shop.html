@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello Traveller</title>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <nav class="nav container">
+        <a href="Home-Page.html" class="logo">Hello Traveller</a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a href="shop.html" class="nav__link">Shop</a></li>
+          </ul>
+          <ul class="nav__list">
+            <li><a href="cart.html" class="nav__link">Cart</a></li>
+            <span id="cart-count" class="cart-count">0</span>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <!-- Sidebar Filter -->
+      <aside class="sidebar">
+        <h2>Browse by</h2>
+        <ul class="filter-options">
+          <li><a href="#" class="selected-item" onclick="filterProducts('all')">All Products</a></li>
+          <li><a href="#" onclick="filterProducts('bags')">Bags</a></li>
+          <li><a href="#" onclick="filterProducts('electronics')">Electronics</a></li>
+          <li><a href="#" onclick="filterProducts('clothing')">Clothing</a></li>
+          <li><a href="#" onclick="filterProducts('camping')">Camping</a></li>
+        </ul>
+      </aside>
+    
+      <!-- Product Listing Section -->
+      <section class="product-list">
+        <h2 class="selected-category">All Products</h2>
+        <div class="product-tiles" id="product-tiles">
+            <div class="product-tile" data-category="bags">
+                <a href="Product-Details.html?name=NOVEX%20Voyage%20Travel%20Rucksack&price=50&rating=4.5&image=Product%20Pics/NOVEX%20Voyage%20Travel%20Rucksack%20Bag.jpg">
+                    <img src="Product Pics/NOVEX Voyage Travel Rucksack Bag.jpg" alt="NOVEX Voyage Travel Rucksack">
+                    <h3>NOVEX Voyage Travel Rucksack</h3>
+                </a>
+                <p class="price">$50</p>
+                <p class="rating">★★★★☆</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+
+            <div class="product-tile" data-category="electronics">
+                <a href="Product-Details.html?name=3%20in%201%20Charging%20Station%20for%20Apple%20Multiple%20Devices&price=25&rating=4.5&image=Product%20Pics/3%20in%201%20Charging%20Station%20for%20Apple%20Multiple%20Devices.jpg">
+                    <img src="Product Pics/3 in 1 Charging Station for Apple Multiple Devices.jpg" alt="3 in 1 Charging Station">
+                    <h3>3 in 1 Charging Station for Apple Multiple Devices</h3>
+                </a>
+                <p class="price">$25</p>
+                <p class="rating">★★★★☆</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            
+            <div class="product-tile" data-category="camping">
+                <a href="Product-Details.html?name=Coleman%20Skylodge%204%20person%20instant%20camping%20tent&price=300&rating=4.5&image=Product%20Pics/coleman_skylodge_4_person_instant_camping_tent_1_.jpg">
+                    <img src="Product Pics/coleman_skylodge_4_person_instant_camping_tent_1_.jpg" alt="Coleman Skylodge Tent">
+                    <h3>Coleman Skylodge 4 person instant camping tent</h3>
+                </a>
+                <p class="price">$300</p>
+                <p class="rating">★★★★☆</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+
+            <div class="product-tile" data-category="clothing">
+                <a href="Product-Details.html?name=Unisex%20RFID%20Travel%20Vest&price=15&rating=4.5&image=Product%20Pics/Unisex%20RFID%20Travel%20Vest.jpg">
+                    <img src="Product Pics/Unisex RFID Travel Vest.jpg" alt="Unisex RFID Travel Vest">
+                    <h3>Unisex RFID Travel Vest</h3>
+                </a>
+                <p class="price">$15</p>
+                <p class="rating">★★★★☆</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="E-commerce.js"></script>
+    <script>
+        // Function to filter products
+        function filterProducts(category) {
+            const productTiles = document.querySelectorAll('.product-tile');
+            const selectedCategory = document.querySelector('.selected-category');
+            const filterOptions = document.querySelectorAll('.filter-options a');
+
+            // Hide all products initially
+            productTiles.forEach(tile => tile.style.display = 'none');
+            
+            // Show products based on selected category
+            if (category === 'all') {
+                productTiles.forEach(tile => tile.style.display = 'block');
+                selectedCategory.textContent = 'All Products';
+            } else {
+                productTiles.forEach(tile => {
+                    if (tile.dataset.category === category) {
+                        tile.style.display = 'block';
+                    }
+                });
+                selectedCategory.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            }
+
+            // Update active filter
+            filterOptions.forEach(option => option.classList.remove('selected-item'));
+            const activeFilter = document.querySelector(`.filter-options a[onclick="filterProducts('${category}')"]`);
+            activeFilter.classList.add('selected-item');
+        }
+
+        // Handle Add to Cart and Buy Now buttons
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productTile = this.closest('.product-tile');
+                const productLink = productTile.querySelector('a').getAttribute('href');
+                const urlParams = new URLSearchParams(productLink.split('?')[1]);
+                
+                const product = {
+                    id: urlParams.get('name'),
+                    name: urlParams.get('name'),
+                    price: parseFloat(urlParams.get('price')),
+                    image: urlParams.get('image'),
+                    quantity: 1
+                };
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingProduct = cart.find(item => item.id === product.id);
+                if (existingProduct) {
+                    existingProduct.quantity += product.quantity;
+                } else {
+                    cart.push(product);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+            });
+        });
+
+        document.querySelectorAll('.buy-now').forEach(button => {
+            button.addEventListener('click', function() {
+                const productTile = this.closest('.product-tile');
+                const productLink = productTile.querySelector('a').getAttribute('href');
+                const urlParams = new URLSearchParams(productLink.split('?')[1]);
+
+                const product = {
+                    id: urlParams.get('name'),
+                    name: urlParams.get('name'),
+                    price: parseFloat(urlParams.get('price')),
+                    image: urlParams.get('image'),
+                    quantity: 1
+                };
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingProduct = cart.find(item => item.id === product.id);
+                if (existingProduct) {
+                    existingProduct.quantity += product.quantity;
+                } else {
+                    cart.push(product);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+
+                window.location.href = 'cart.html';
+            });
+        });
+
+        // Update cart count on page load
+        window.onload = updateCartCount;
+    </script>
+</body>
+</html>

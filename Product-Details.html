@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello Traveller - Product Details</title>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <nav class="nav container">
+        <a href="Home-Page.html" class="logo">Hello Traveller</a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a href="shop.html" class="nav__link">Shop</a></li>
+          </ul>
+          <ul class="nav__list">
+            <li><a href="cart.html" class="nav__link">Cart</a></li>
+            <span id="cart-count" class="cart-count">0</span>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Product Details -->
+    <div class="product-details">
+        <div class="product-image">
+            <img id="product-image" src="" alt="Product Image" style="width: 400px; height: 400px;">
+        </div>
+        <div class="product-info">
+            <h2 id="product-title">Product Title</h2>
+            <p id="product-price">$0.00</p>
+            <p id="product-rating">★★★★☆</p>
+            <div class="quantity">
+                <button id="decrease-quantity">-</button>
+                <span id="quantity">1</span>
+                <button id="increase-quantity">+</button>
+            </div>
+            <button id="add-to-cart">Add to Cart</button>
+            <button id="buy-now">Buy Now</button>
+        </div>
+    </div>
+    <script src="E-commerce.js"></script>
+</body>
+</html>
