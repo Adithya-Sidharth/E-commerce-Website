@@ -1,0 +1,209 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* DEFAULT STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; 
+}
+
+body {
+  font-family: 'Montserrat',Arial, sans-serif; 
+  line-height: 1.6; /* Improves readability */
+  font-weight: 400;
+  background-color: rgba(28, 28, 28, 1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; 
+}
+
+ul, ol {
+  list-style: none; 
+}
+
+a {
+  text-decoration: none; 
+  color: inherit; /* Inherits color from parent element */
+}
+
+p{
+  line-height: 1.5rem;
+}
+
+img{
+  max-width: 100%;
+}
+
+/* HEADER STYLE */
+
+header {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: rgba(51, 51, 51, 0.5); 
+  padding: 10px 15px;
+  z-index: 1000;
+}
+.logo{
+  margin-left: 5rem;
+  font-family: 'Montserrat';
+  font-size: 40px;
+  color: rgba(255, 215, 0, 1);
+}
+
+nav,
+.nav__menu,
+.nav__list{
+  display: flex;
+  align-items: center;
+}
+
+.nav__menu{
+  margin-left: 2.5rem;
+}
+
+nav{
+  justify-content: space-between;
+}
+
+.nav__list{
+  margin-right: 5rem;
+  color: rgba(245, 245, 245, 1);
+}
+
+
+/* =========== SHOP CATEGORY =========== */
+
+.main-content {
+    display: flex;
+    margin-top: 150px;
+    margin-left: 100px;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    color: rgba(176, 176, 176, 1); 
+    font-family: 'Poppins';
+  }
+  
+  .sidebar h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+  
+  .filter-options {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .filter-options li {
+    margin-bottom: 10px;
+  }
+  
+  .filter-options a {
+    color:rgba(176, 176, 176, 1); 
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .filter-options a:hover {
+    color: rgba(255, 184, 0, 1);
+  }
+  
+  .filter-options a.selected-item {
+    color: rgba(255, 111, 60, 1);        
+  }
+  
+  /* =========== Product listing section styling ===========*/
+  .product-list {
+    flex: 1; /* Makes product list take up remaining space */
+    padding: 20px;
+  }
+  
+  .selected-category {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 1); /* Example color */
+  }
+  
+  .product-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between tiles */
+  }
+  
+  .product-tile {
+    background-color: #444; /* Background color for the tile */
+    color: #fff; /* Text color */
+    padding: 15px;
+    border-radius: 8px;
+    width: calc(50% - 20px); /* 50% width for two columns with gap */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    text-align: center; /* Center text in tiles */
+  }
+  
+  .product-tile img {
+    width: 250px; /* Ensure images fit within the tile */
+    height: 250px; /* Maintain aspect ratio */
+    object-fit: cover;
+  }
+  
+  .product-tile h3 {
+    font-size: 20px; /* Adjust font size for product name */
+    margin: 10px 0;
+  }
+  
+  .price{
+    font-size: 20px;
+    color: rgba(255, 184, 0, 1);
+  }
+  
+  .rating{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .add-to-cart, .buy-now {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+  }
+  
+  .add-to-cart {
+    background-color: rgba(255, 184, 0, 1); 
+    color: white;
+  }
+  
+  .add-to-cart:hover {
+    background-color: rgba(0, 100, 0, 1); 
+  }
+  
+  .buy-now {
+    background-color: rgba(255, 111, 60, 1); 
+    color: black;
+  }
+  
+  .buy-now:hover {
+    background-color: rgba(255, 0, 0, 1);
+  }
