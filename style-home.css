@@ -262,3 +262,25 @@ nav{
 .crop-container2:hover .camping-gears {
   transform: translate(-50%, -50%) scale(1.1); /* Enlarge on hover */
 }
+
+/* Media Query for 768px or less */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+/* Media Query for 480px or less */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}

@@ -267,3 +267,25 @@ body {
     color: rgba(255, 184, 0, 1);
     text-align: center;
   }
+
+  /* Media Query for 768px or less */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+/* Media Query for 480px or less */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
